@@ -1,0 +1,64 @@
+OP_2ND_3RD_POLES.CIR
+*
+
+* STEP INPUT
+VS	1	0	AC	1	PWL(0US 0V   0.1US 1V   10US 1V)
+
+* AC SOURCE
+*VS 1 0 dc 0 sin(0V 1V 1e4Hz 0 0)
+
+
+* NON INVERTING AMP
+Rf2	0	2	100
+Rf1	2	3	2.045e6
+XOP1	1 2     3       OP_TL062
+*
+RL	3	0	10k
+CL	3	0	1pF
+
+* OP AMP MODEL
+*
+* Device Pins      In+ In- Vout
+.SUBCKT op_tl062    1   2   82
+*
+* INPUT R
+RIN   1   2   1e9
+*
+*  AMPLIFIER STAGE: GAIN, POLE, SLEW
+*   Aol=10000, fu=1000000 Hz
+G1   0    10  VALUE = { 1e-1 * V(1,2)  }
+R1   10   0   1e6
+C1   10   0   1.59159e-12
+*
+* 2ND POLE 
+G2   0 20   10 0  1e-6
+R2   20       0     1e6
+C2   20       0     5.03e-13
+*
+* 3RD POLE 
+G3   0 30   20 0 1e-6
+R3   30       0     1e6
+C3   30       0     1.59e-13
+*
+* OUTPUT STAGE
+EBUFFER 80 0  30  0    1
+ROUT 80      82        100
+.ENDS
+*
+* ANALYSIS *************************************
+.TRAN 	0.05US  25e0US 
+*.AC 	DEC 	20 1 100MEG
+
+
+
+* VIEW RESULTS
+.control
+run
+*plot V(3)
+
+
+
+wrdata ee18btech11016_sim.dat V(3)
+.endc 
+
+.end
