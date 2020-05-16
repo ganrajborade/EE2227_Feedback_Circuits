@@ -21,7 +21,7 @@ ngspice ee18btech1016_sim.net
 exit
 ```
 
---> Enter the following command . This runs  'ee18btech11026_simulation.py'  which plots a plot of 'ee18btech11016_sim.dat' file
+--> Enter the following command . This runs  'ee18btech11016_simulation.py'  which plots a plot of 'ee18btech11016_sim.dat' file
 and save it as 'ee18btech11016_spice_result.pdf'
 ``` 
 python3 ee18btech11016_simulation.py
