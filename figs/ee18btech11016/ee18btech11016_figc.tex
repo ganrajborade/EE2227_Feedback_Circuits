@@ -1,0 +1,11 @@
+\begin{circuitikz}[american]
+
+\draw (2,2)  node[op amp] (OA) {};
+\draw (OA.+) -- (0,1.5) to[vsourcesin, l= $V_{s}$] (0,0) node[ground](GND){};
+\draw (OA.-) -- (0,2.5) node[label={below:$V_{f}$}]{} to[R,l_=$100\ohm$] (-2,2.5) node[ground](GND){};
+\draw (OA.out) -- (3,2) node[label={}]{};
+\draw (3,2) -- (4.5,2) node[label={above:$V_{o}$}]{};
+%\draw (3,2) to[R=$5300\ohm$] (5.5,2) node[label={}]{} to[C,l_=$3nF$] (5.5,0) node[ground](GND){};
+%\draw (5.5,2) -- (6.5,2) node[label={above:$V_{o}$}]{};
+\draw (3,2) -- (3,4.5) to[R=$2.045M\ohm$] (0,4.5) -- (0,2.5);
+\end{circuitikz}
