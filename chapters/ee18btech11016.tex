@@ -21,12 +21,11 @@ where the Gain and Poles are listed in Table \ref{table:ee18btech11016_Table_1}.
 \end{table}
 
 Poles are at $f_{1} =10^5$ and $f_{2} = 3.16\times10^{5}$ and $f_{3} = 10^6$ 
-\begin{align}
-G\brak{f} &= \frac{G_{0}}{\brak{1+\j\frac{f}{f_{1}}}\brak{1+\j\frac{f}{f_{2}}}\brak{1+\j\frac{f}{f_{3}}}}
-\\
-&= \frac{10^{5}}{\brak{1+\j\frac{f}{10^5}}\brak{1+\j\frac{f}{3.16\times10^{5}}}\brak{1+\j\frac{f}{10^6}}}
+\begin{multline}
+G\brak{f} = \frac{G_{0}}{\brak{1+\j\frac{f}{f_{1}}}\brak{1+\j\frac{f}{f_{2}}}\brak{1+\j\frac{f}{f_{3}}}}\\
+= \frac{10^{5}}{\brak{1+\j\frac{f}{10^5}}\brak{1+\j\frac{f}{3.16\times10^{5}}}\brak{1+\j\frac{f}{10^6}}}
 \label{eq:ee18btech11016_1}
-\end{align}
+\end{multline}
 \item Find the loop gain expression ($G(s)H$) (H is constant in this question).
 \\
 \solution 
@@ -41,13 +40,11 @@ GH = \frac{10^{5}}{\brak{1+\j\frac{f}{10^5}}\brak{1+\j\frac{f}{3.16\times10^{5}}
 The phase margin = $180\degree$ - $\phi(f_{c})$ where $f_{c}$ is the frequency where $\abs{G(f)H}=1$.It is required that the phase margin is $45\degree$ , so that :
 
 \begin{align}
-45\degree &=  180\degree - \phi(f_{c})
-\\
-\phi(f_{c})&=-135\degree.
+45\degree &=  180\degree - \phi(f_{c}) \implies \phi(f_{c})=-135\degree.
 \end{align}
 From \eqref{eq:ee18btech11016_2} 
 \begin{align}
--135\degree = -tan^{-1}\brak{\frac{f_{c}}{10^5}}-tan^{-1}\brak{\frac{f_{c}}{3.16\times10^5}}-tan^{-1}\brak{\frac{f_{c}}{10^6}}
+-135\degree = -\tan^{-1}\brak{\frac{f_{c}}{10^5}}-\tan^{-1}\brak{\frac{f_{c}}{3.16\times10^5}}-\tan^{-1}\brak{\frac{f_{c}}{10^6}}
 \end{align}
 After solving the above equation , we get $f_{c}$ = 315KHz.
 \\
