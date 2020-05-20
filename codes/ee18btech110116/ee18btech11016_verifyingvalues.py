@@ -1,6 +1,11 @@
 import numpy as np
 import math
 
+#if using termux
+import subprocess
+import shlex
+#end if
+
 cur_x = 310000 # The algorithm starts at x=310000
 gamma = 25 # step size multiplier
 precision = 0.00001
