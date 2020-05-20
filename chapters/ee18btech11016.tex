@@ -71,27 +71,32 @@ codes/ee18btech11016/ee18btech11016_1.py
     H\brak{\frac{10^5}{\sqrt{1+(\frac{315\times10^3}{10^5})^2}\sqrt{1+(\frac{315\times10^3}{3.16\times10^6})^2}\sqrt{1+(\frac{315\times10^3}{10^6})^2}}}
 \end{align}
 
-which is equal to $H\times(20.04\times10^3)$.
+which is equal to $H\times(28.8588\times10^3)$.
 So,
 \begin{align}
-\abs{G(f_{c})H} = H\times(20.04\times10^3)
+\abs{G(f_{c})H} = H\times(28.8588\times10^3)
 \end{align}
+
 Setting $\abs{G(f_{c})H}$ = 1 , Solving for $\beta$ (here $\beta$ is equal to H) yields 
 \begin{align}
-\beta &= 48.9\times10^{-6}
+\beta &= 34.651\times10^{-6}
 \end{align}
 Or
 \begin{align}
-H &= 48.9\times10^{-6}
+H &= 34.651\times10^{-6}
 \end{align}
 
+The following code provides the method to calculate the unit step response and the values of H,G(fc).
+\begin{lstlisting}
+codes/ee18btech11016/ee18btech11016_verifyingvalues.py
+\end{lstlisting}
 \item Find the corresponding closed-loop gain for which a phase margin of $45\degree$ is obtained.\\
 \solution The closed loop dc gain is given as
 \begin{align}
-A_{f} = \frac{G_{0}}{1+HG_{0}}=\frac{10^5}{1+48.9\times10^{-6}(10^5)}
+A_{f} = \frac{G_{0}}{1+HG_{0}}=\frac{10^5}{1+34.651\times10^{-6}(10^5)}
 \end{align} 
 \begin{align}
-A_{f} = 17\times10^3
+A_{f} = 22.3957\times10^3
 \end{align}
 
 
@@ -114,7 +119,7 @@ The transfer function of OPAMP is
 \solution\\
 Choose a resistance network such that
 \begin{align}
-    H = \frac{V_{f}}{V_{o}} = \frac{R_{f_{1}}}{R_{f_{1}}+R_{f_{2}}} \approx 48.9\times10^{-6}
+    H = \frac{V_{f}}{V_{o}} = \frac{R_{f_{1}}}{R_{f_{1}}+R_{f_{2}}} \approx 34.651\times10^{-6}
 \end{align}
 \begin{figure}[ht!]
 	\begin{center}
@@ -127,10 +132,10 @@ Choose a resistance network such that
 Choose $R_{f_{1}}$ and $R_{f_{2}}$ as
 \begin{align}
     R_{f_{1}} = 100\ohm\\
-    R_{f_{2}} = 2.045M\ohm
+    R_{f_{2}} = 4.057M\ohm
 \end{align}
 \begin{align}
-H = \frac{R_{f_{1}}}{R_{f_{1}}+R_{f_{2}}} = \frac{100}{100+2.045\times10^6} \approx 48.9\times10^{-6}
+H = \frac{R_{f_{1}}}{R_{f_{1}}+R_{f_{2}}} = \frac{100}{100+4.057\times10^6} \approx 34.651\times10^{-6}
 \end{align}
 \item Feedback Circuit for $PM = 45\degree$
 \\
@@ -144,7 +149,14 @@ H = \frac{R_{f_{1}}}{R_{f_{1}}+R_{f_{2}}} = \frac{100}{100+2.045\times10^6} \app
 \end{figure}
 
 \item Simulate the circuit in ngspice.\\
-\solution The following code provides instructions about the simulation.
+\solution For $H=34.651\times10^{-6}$ the closed loop response is
+\begin{align}
+\abs T \approx \frac{1}{H} = 28.8588\times10^{3}
+\end{align}
+which can be observable from graph also.
+\\
+
+The following code provides instructions about the simulation.
 \begin{lstlisting}
 codes/ee18btech11016/spice/README.md
 \end{lstlisting}
